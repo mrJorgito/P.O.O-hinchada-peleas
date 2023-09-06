@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace Juego
 {
@@ -89,12 +90,15 @@ namespace Juego
                 /*
                 m1 = (_pruebasPosition.Y-_pruebasPosition1.Y)/(_pruebasPosition.X-_pruebasPosition1.X);
                 b1 = _pruebasPosition1.Y - (m1*_pruebasPosition1.X);*/
-                ca1 = _ataquePosition1.Y - _pruebasPosition.Y;
-                co1 = _ataquePosition1.X - _pruebasPosition.X;
-                distInicial1 = Math.Sqrt(Math.Pow(co1,2) + Math.Pow(ca1, 2));
-                dif1 = distInicial1 / 30;
+                ca1 = _ataquePosition1.Y - _pruebasPosition.Y; // -85
+                co1 = _ataquePosition1.X - _pruebasPosition.X; // 3
+                distInicial1 = Math.Sqrt(Math.Pow(co1,2) + Math.Pow(ca1, 2)); // 85,05
+                dif1 = distInicial1 / 120; // 2,835
                 at1 = 30;
-                xd1 = Math.Round(_ataquePosition1.Y / _ataquePosition1.X);
+                xd1 = Math.Round((_ataquePosition1.Y + _ataquePosition1.X)/120); // 10,83
+                if (xd1 + xd1 < 0) xd1 = -xd1;
+                Debug.Print(xd1.ToString());
+                md1 = 0;
             }
             if (disparo1)
             {/*
@@ -107,15 +111,17 @@ namespace Juego
                 {
                     if (at1 > 0)
                     {
-                        _ataquePosition1.Y = float.Parse((_pruebasPosition.Y + (ca1 * distInicial1) / (distInicial1 - dif1)).ToString());
+                        _ataquePosition1.Y = float.Parse((_pruebasPosition.Y + (ca1 * distInicial1) / (distInicial1 - dif1)).ToString()); // 
                         _ataquePosition1.X = float.Parse((_pruebasPosition.X + (co1 * distInicial1) / (distInicial1 - dif1)).ToString());
-                        at1++;
+                        dif1 += dif1;
+                        at1--;
                     }
                     else
                     {
                         disparo1 = false;
                     }
                     md1 = 0;
+                    Debug.Print("xd");
                 }
             }
             /*if (salto1)
