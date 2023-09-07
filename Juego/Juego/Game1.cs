@@ -17,10 +17,14 @@ namespace Juego
         private Texture2D _pruebasTexture, _pruebasTexture1 , _manzanaTexture, _ataque1;
         private Vector2 _manzanaPosition, _pruebasPosition, _pruebasPosition1, _ataquePosition1, _pruebasSpeed = new Vector2(3, 3);
         private Song _backgroundMusic;
-        private float posInicial = 0, posInicial1 = 0, at1;
-        private double distInicial1, dif1, co1,ca1,md1 = 0,xd1;
+        private float posInicial = 0, posInicial1 = 0, at1=0,at=0;
+        private double distInicial1, dif1, co1,ca1,md1 = 0,xd1, marca, cont;
+        private float m1, b1, fijo1, fijo2, fijo3, fijo4;
+        private List<DisparoNormal> p1 = new List<DisparoNormal>(), p2 = new List<DisparoNormal>();
+        private EspecialDisparo t1, t2;
 
-        private bool _manzanaTocada = false, salto = false, _manzanaTocada1 = false, salto1 = false, disparo1 = false;
+        private bool _manzanaTocada = false, salto = false, _manzanaTocada1 = false, salto1 = false, disparo1 = false, bban = false;
+        private bool n1, n2; //bandera para innmovilizar mientras prepara ataque
 
         public Game1()
         {
@@ -43,6 +47,7 @@ namespace Juego
             _ataque1 = Content.Load<Texture2D>("img/bola (1)");
             _ataquePosition1 = new Vector2(0, 0);
 
+
             // Carga las textura "manzana" en la variable.
             _manzanaTexture = Content.Load<Texture2D>("img/fondo (3)");
             // (?)
@@ -60,17 +65,17 @@ namespace Juego
 
 
             //primer jugador
-            if (keyboardState.IsKeyDown(Keys.Left))
+            if (keyboardState.IsKeyDown(Keys.Left) && !n1)
                 // Se resta la posición actual en "X" por el valor de la velocidad. Si velocidad es 2 se restan 2 posiciones.
                 _pruebasPosition1.X -= 5;
 
             // Cuando se aprieta la tecla "right" se hace la siguiente operación:
-            if (keyboardState.IsKeyDown(Keys.Right))
+            if (keyboardState.IsKeyDown(Keys.Right) && !n1)
                 // Se suma la posición actual en "X" por el valor de la velocidad.
                 _pruebasPosition1.X += 5;
 
             // Cuando se aprieta la tecla "up" se hace la siguiente operación:
-            if (keyboardState.IsKeyDown(Keys.Up))
+            if (keyboardState.IsKeyDown(Keys.Up) && !n1)
             {
                 _manzanaTocada1 = false;
                 salto1 = true;
@@ -78,52 +83,50 @@ namespace Juego
                 posInicial1 = _pruebasPosition1.Y;
                 // Se resta la posición actual en "Y" por el valor de la velocidad.
             }
-            if (keyboardState.IsKeyDown(Keys.Down) && !_manzanaTocada1)
+            if (keyboardState.IsKeyDown(Keys.Down) && !_manzanaTocada1 && !n1)
             // Se suma la posición actual en "Y" por el valor de la velocidad.
             _pruebasPosition1.Y += 5;
 
-            if (keyboardState.IsKeyDown(Keys.J) && !disparo1)
+            
+            if (keyboardState.IsKeyDown(Keys.J))
             {
-                disparo1 = true;
-                _ataquePosition1.X = _pruebasPosition1.X;
-                _ataquePosition1.Y = _pruebasPosition1.Y;
-                /*
-                m1 = (_pruebasPosition.Y-_pruebasPosition1.Y)/(_pruebasPosition.X-_pruebasPosition1.X);
-                b1 = _pruebasPosition1.Y - (m1*_pruebasPosition1.X);*/
-                ca1 = _ataquePosition1.Y - _pruebasPosition.Y; // -85
-                co1 = _ataquePosition1.X - _pruebasPosition.X; // 3
-                distInicial1 = Math.Sqrt(Math.Pow(co1,2) + Math.Pow(ca1, 2)); // 85,05
-                dif1 = distInicial1 / 120; // 2,835
-                at1 = 30;
-                xd1 = Math.Round((_ataquePosition1.Y + _ataquePosition1.X)/120); // 10,83
-                if (xd1 + xd1 < 0) xd1 = -xd1;
-                Debug.Print(xd1.ToString());
-                md1 = 0;
+                at1++;
+                n1 = true;
             }
-            if (disparo1)
-            {/*
-                if (m1 > 0) _ataquePosition1.Y -= ;
-                else if (m1 < 0) _ataquePosition1.Y += ;
-                _ataquePosition1.X = (_ataquePosition1.Y - b1)/m1;*/
-                
-                md1++;
-                if (xd1 == md1)
+            if (keyboardState.IsKeyUp(Keys.J)){
+                if(at1 == 50)
                 {
-                    if (at1 > 0)
-                    {
-                        _ataquePosition1.Y = float.Parse((_pruebasPosition.Y + (ca1 * distInicial1) / (distInicial1 - dif1)).ToString()); // 
-                        _ataquePosition1.X = float.Parse((_pruebasPosition.X + (co1 * distInicial1) / (distInicial1 - dif1)).ToString());
-                        dif1 += dif1;
-                        at1--;
-                    }
-                    else
-                    {
-                        disparo1 = false;
-                    }
-                    md1 = 0;
-                    Debug.Print("xd");
+                    EspecialDisparo(true);
                 }
+                else if (at1 > 0)
+                {
+                    NuevoDisparo(true);
+                }
+                at1 = 0;
+                n1 = false;
             }
+            if (keyboardState.IsKeyDown(Keys.T))
+            {
+                at++;
+                n2 = true;
+            }
+            if (keyboardState.IsKeyUp(Keys.T))
+            {
+                if (at == 50)
+                {
+                    EspecialDisparo(false);
+                }
+                else if (at > 0)
+                {
+                    NuevoDisparo(false);
+                }
+                at = 0;
+                n2 = false;
+            }
+            AvanzarDisparos();
+
+            //nuevo
+
             /*if (salto1)
             {
                 _pruebasPosition1.Y -= 5;
@@ -141,17 +144,17 @@ namespace Juego
             // Movimiento del sprite "pruebas" controlado por las flechas del teclado
 
             // Cuando se aprieta la tecla "left" se hace la siguiente operación:
-            if (keyboardState.IsKeyDown(Keys.A))
+            if (keyboardState.IsKeyDown(Keys.A) && !n2)
                     // Se resta la posición actual en "X" por el valor de la velocidad. Si velocidad es 2 se restan 2 posiciones.
                     _pruebasPosition.X -= 5;
 
                 // Cuando se aprieta la tecla "right" se hace la siguiente operación:
-                if (keyboardState.IsKeyDown(Keys.D))
+                if (keyboardState.IsKeyDown(Keys.D) && !n2)
                     // Se suma la posición actual en "X" por el valor de la velocidad.
                     _pruebasPosition.X += 5;
 
             // Cuando se aprieta la tecla "up" se hace la siguiente operación:
-            if (keyboardState.IsKeyDown(Keys.W) && !salto && _manzanaTocada)
+            if (keyboardState.IsKeyDown(Keys.W) && !salto && _manzanaTocada && !n2)
             {
                 salto = true;
                 posInicial = _pruebasPosition.Y;
@@ -205,13 +208,59 @@ namespace Juego
 
             _spriteBatch.Draw(_pruebasTexture, _pruebasPosition, Color.White);
             _spriteBatch.Draw(_pruebasTexture1, _pruebasPosition1, Color.White);
-            if(disparo1)
-                _spriteBatch.Draw(_ataque1, _ataquePosition1, Color.White);
+            foreach (DisparoNormal d in p1)
+            {
+                _spriteBatch.Draw(d._ataque1, d._ataquePosition1, Color.White);
+            }
+            foreach (DisparoNormal d in p2)
+            {
+                _spriteBatch.Draw(d._ataque1, d._ataquePosition1, Color.White);
+            }
             //_spriteBatch.Draw(_pruebasTexture, new Rectangle(800, 800, 64, 64), Color.White);
             //if (!_manzanaTocada)
             _spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        void NuevoDisparo(bool xd)
+        {
+            if (xd)
+            {
+                p2.Add(new DisparoNormal(_pruebasPosition.X,_pruebasPosition1.X,_pruebasPosition.Y,_pruebasPosition1.Y));
+                p2[p2.Count-1]._ataque1 = Content.Load<Texture2D>("img/bola (1)");
+            }
+            else
+            {
+                p1.Add(new DisparoNormal(_pruebasPosition1.X, _pruebasPosition.X, _pruebasPosition1.Y, _pruebasPosition.Y));
+                p1[p1.Count - 1]._ataque1 = Content.Load<Texture2D>("img/bola (1)");
+            }
+        }
+
+        void EspecialDisparo(bool xd)
+        {
+            if (xd)
+            {
+                //p2.Add(new EspecialDisparo(_pruebasPosition.X, _pruebasPosition1.X, _pruebasPosition.Y, _pruebasPosition1.Y));
+                p2[p2.Count - 1]._ataque1 = Content.Load<Texture2D>("img/bola (1)");
+            }
+            else
+            {
+                //p1.Add(new EspecialDisparo(_pruebasPosition1.X, _pruebasPosition.X, _pruebasPosition1.Y, _pruebasPosition.Y));
+                p1[p1.Count - 1]._ataque1 = Content.Load<Texture2D>("img/bola (1)");
+            }
+        }
+
+        void AvanzarDisparos()
+        {
+            for (int i = p1.Count - 1; i >= 0; i--)
+            {
+                if (p1[i].AvanzarDisparo()) p1.RemoveAt(i);
+            }
+            for (int i = p2.Count-1; i >= 0; i--)
+            {
+                if (p2[i].AvanzarDisparo()) p2.RemoveAt(i);
+            }
         }
     }
 }
