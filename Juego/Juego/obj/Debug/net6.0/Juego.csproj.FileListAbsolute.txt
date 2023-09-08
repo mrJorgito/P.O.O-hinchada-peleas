@@ -64,3 +64,6 @@ C:\valera\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\refint\Juego.dll
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.pdb
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.genruntimeconfig.cache
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\ref\Juego.dll
+C:\xampp\htdocs\awus\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.dll
+C:\xampp\htdocs\awus\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\refint\Juego.dll
+C:\xampp\htdocs\awus\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.pdb
