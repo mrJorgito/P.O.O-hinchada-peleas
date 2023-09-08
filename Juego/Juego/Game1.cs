@@ -14,7 +14,7 @@ namespace Juego
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        private Texture2D _pruebasTexture, _pruebasTexture1 , _manzanaTexture, _ataque1;
+        private Texture2D _pruebasTexture, _pruebasTexture1 , _manzanaTexture, _ataque1,particula,particula1;
         private Vector2 _manzanaPosition, _pruebasPosition, _pruebasPosition1, _ataquePosition1, _pruebasSpeed = new Vector2(3, 3);
         private Song _backgroundMusic;
         private float posInicial = 0, posInicial1 = 0, at1=0,at=0;
@@ -46,6 +46,8 @@ namespace Juego
             _pruebasPosition1 = new Vector2(600, 100);
             _ataque1 = Content.Load<Texture2D>("img/bola (1)");
             _ataquePosition1 = new Vector2(0, 0);
+            particula = Content.Load<Texture2D>("img/particula");
+            particula1 = Content.Load<Texture2D>("img/particula1");
 
 
             // Carga las textura "manzana" en la variable.
@@ -60,6 +62,12 @@ namespace Juego
 
         protected override void Update(GameTime gameTime)
         {
+            Rectangle pruebasRectangle = new Rectangle((int)_pruebasPosition.X, (int)_pruebasPosition.Y, _pruebasTexture.Width, _pruebasTexture.Height);
+            Rectangle pruebasRectangle1 = new Rectangle((int)_pruebasPosition1.X, (int)_pruebasPosition1.Y, _pruebasTexture1.Width, _pruebasTexture1.Height);
+            // Es la caja de coliciones de "pruebas" y se basa en el tamaño de la imgane.xx
+            Rectangle manzanaRectangle = new Rectangle((int)_manzanaPosition.X, (int)_manzanaPosition.Y + (_manzanaTexture.Height / 3) * 2, _manzanaTexture.Width, _manzanaTexture.Height / 3);
+            // Es la caja de coliciones de "manzana" y se basa en el tamaño de la imgane.
+
             // Se utiliza para poder recibir el estado del teclado.
             KeyboardState keyboardState = Keyboard.GetState();
 
@@ -94,7 +102,7 @@ namespace Juego
                 n1 = true;
             }
             if (keyboardState.IsKeyUp(Keys.J)){
-                if(at1 == 50)
+                if(at1 > 20)
                 {
                     EspecialDisparo(true);
                 }
@@ -112,7 +120,7 @@ namespace Juego
             }
             if (keyboardState.IsKeyUp(Keys.T))
             {
-                if (at == 50)
+                if (at > 50)
                 {
                     EspecialDisparo(false);
                 }
@@ -123,7 +131,7 @@ namespace Juego
                 at = 0;
                 n2 = false;
             }
-            AvanzarDisparos();
+            AvanzarDisparos(pruebasRectangle,pruebasRectangle1);
 
             //nuevo
 
@@ -178,12 +186,7 @@ namespace Juego
             if (!_manzanaTocada && !salto) _pruebasPosition.Y += 5;
             //if (!_manzanaTocada1 && !salto1) _pruebasPosition1.Y += 5;
                 // Verificar colisión con la manzana
-                Rectangle pruebasRectangle = new Rectangle((int)_pruebasPosition.X, (int)_pruebasPosition.Y, _pruebasTexture.Width, _pruebasTexture.Height);
-                Rectangle pruebasRectangle1 = new Rectangle((int)_pruebasPosition1.X, (int)_pruebasPosition1.Y, _pruebasTexture1.Width, _pruebasTexture1.Height);
-                // Es la caja de coliciones de "pruebas" y se basa en el tamaño de la imgane.
-                Rectangle manzanaRectangle = new Rectangle((int)_manzanaPosition.X, (int)_manzanaPosition.Y + (_manzanaTexture.Height / 3)*2, _manzanaTexture.Width, _manzanaTexture.Height/3);
-                Rectangle ataqueRectangle1 = new Rectangle((int)_ataquePosition1.X, (int)_ataquePosition1.Y + (_ataque1.Height / 3)*2, _ataque1.Width, _ataque1.Height/3);
-                // Es la caja de coliciones de "manzana" y se basa en el tamaño de la imgane.
+                
 
                 if (pruebasRectangle.Intersects(manzanaRectangle))
                 {
@@ -194,7 +197,6 @@ namespace Juego
                 _manzanaTocada1 = true;
             }
             //}
-
             base.Update(gameTime);
         }
 
@@ -215,6 +217,40 @@ namespace Juego
             foreach (DisparoNormal d in p2)
             {
                 _spriteBatch.Draw(d._ataque1, d._ataquePosition1, Color.White);
+            }
+
+            if (t1 != null) {
+                for (int i = 0; i < t1.non; i++)
+                {
+                    if (i < 200)
+                        _spriteBatch.Draw(particula1, t1.particulas[i]._ataquePosition1, Color.White);
+                    else
+                        _spriteBatch.Draw(particula, t1.particulas[i]._ataquePosition1, Color.White);
+                }
+                t1.non += 50;
+                if (t1.non == 4800)
+                {
+                    t1 = null;
+                }
+                n2 = true;
+            }
+
+            if (t2 != null)
+            {
+                Debug.Print(t2.particulas.Count.ToString());
+                for (int i = 0; i < t2.non; i++)
+                {
+                    if (i < 200)
+                        _spriteBatch.Draw(particula1, t2.particulas[i]._ataquePosition1, Color.White);
+                    else
+                        _spriteBatch.Draw(particula, t2.particulas[i]._ataquePosition1, Color.White);
+                }
+                t2.non += 50;
+                if (t2.non == 4800)
+                {
+                    t2 = null;
+                }
+                n1 = true;
             }
             //_spriteBatch.Draw(_pruebasTexture, new Rectangle(800, 800, 64, 64), Color.White);
             //if (!_manzanaTocada)
@@ -239,27 +275,26 @@ namespace Juego
 
         void EspecialDisparo(bool xd)
         {
-            if (xd)
+            if (!xd)
             {
-                //p2.Add(new EspecialDisparo(_pruebasPosition.X, _pruebasPosition1.X, _pruebasPosition.Y, _pruebasPosition1.Y));
-                p2[p2.Count - 1]._ataque1 = Content.Load<Texture2D>("img/bola (1)");
+                t1 = new EspecialDisparo(_pruebasPosition1.X, _pruebasPosition.X, _pruebasPosition1.Y, _pruebasPosition.Y,particula);
+                
             }
             else
             {
-                //p1.Add(new EspecialDisparo(_pruebasPosition1.X, _pruebasPosition.X, _pruebasPosition1.Y, _pruebasPosition.Y));
-                p1[p1.Count - 1]._ataque1 = Content.Load<Texture2D>("img/bola (1)");
+                t2 = new EspecialDisparo(_pruebasPosition.X, _pruebasPosition1.X, _pruebasPosition.Y, _pruebasPosition1.Y, particula);
             }
         }
 
-        void AvanzarDisparos()
+        void AvanzarDisparos(Rectangle ataque, Rectangle objetivo)
         {
             for (int i = p1.Count - 1; i >= 0; i--)
             {
-                if (p1[i].AvanzarDisparo()) p1.RemoveAt(i);
+                if (p1[i].AvanzarDisparo(new Rectangle((int)p1[i]._ataquePosition1.X, (int)p1[i]._ataquePosition1.Y, (int)p1[i]._ataque1.Width, (int)p1[i]._ataque1.Height) ,objetivo)) p1.RemoveAt(i);
             }
             for (int i = p2.Count-1; i >= 0; i--)
             {
-                if (p2[i].AvanzarDisparo()) p2.RemoveAt(i);
+                if (p2[i].AvanzarDisparo(new Rectangle((int)p2[i]._ataquePosition1.X, (int)p2[i]._ataquePosition1.Y, (int)p2[i]._ataque1.Width, (int)p2[i]._ataque1.Height), ataque)) p2.RemoveAt(i);
             }
         }
     }

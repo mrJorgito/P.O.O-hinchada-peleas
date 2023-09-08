@@ -5,17 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Juego
 {
     internal class EspecialDisparo
     {
         public Texture2D _ataque1;
-        public Vector2 _ataquePosition1 = new Vector2(0, 0);
+        public Vector2 _ataquePosition1 = new Vector2(0, 0),_objetivoPosition1 = new Vector2(0,0);
         public bool disparo1, bban, bban1;
-        public double m1, b1, fijo3;
+        public double m1, b1, fijo3, cont = 0, non = 200;
+        public List<Particula> particulas = new List<Particula>();
 
-        public EspecialDisparo(float px1, float px2, float py1, float py2)
+        public EspecialDisparo(float px1, float px2, float py1, float py2, Texture2D texture)
         {
             _ataquePosition1.Y = py2;
             _ataquePosition1.X = px2;
@@ -25,6 +27,29 @@ namespace Juego
             bban = false;
             bban1 = false;
             fijo3 = px1;
+            _objetivoPosition1.Y = py1;
+            _objetivoPosition1.X = px1;
+            _ataquePosition1.X = float.Parse(((_ataquePosition1.Y - b1) / m1).ToString());
+            float restador1 = _ataquePosition1.Y; //????
+            float restador2 = _ataquePosition1.X; //????
+            for (int i = 0; i < 1600; i++)
+            {
+                particulas.Add(new Particula(new Vector2(restador2,restador1)));
+                particulas.Add(new Particula(new Vector2(restador2-1,restador1-1)));
+                particulas.Add(new Particula(new Vector2(restador2+1,restador1+1)));
+                if ((restador2 >= fijo3 || bban) && !bban1)
+                {
+                    if (m1 > 0) restador1 -= 0.5f;
+                    else if (m1 < 0) restador1 += 0.5f;
+                    restador2 = float.Parse(((restador1 - b1) / m1).ToString());
+                }
+                else if (restador2 < fijo3 || bban1)
+                {
+                    if (m1 > 0) restador1 += 0.5f;
+                    else if (m1 < 0) restador1 -= 0.5f;
+                    restador2 = float.Parse(((restador1 - b1) / m1).ToString());
+                }
+            }
         }
 
         public bool AvanzarDisparo()

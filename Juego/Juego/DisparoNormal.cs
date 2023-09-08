@@ -29,7 +29,7 @@ namespace Juego
             fijo3 = px1;
         }
 
-        public bool AvanzarDisparo()
+        public bool AvanzarDisparo(Rectangle ataque, Rectangle objetivo)
         {
             if ((_ataquePosition1.X >= fijo3 || bban) && !bban1)
             {
@@ -53,10 +53,13 @@ namespace Juego
                 }
                 bban1 = true;
             }
+            if (ataque.Intersects(objetivo))
+            {
+                return true;
+            }
             return false;
         }
     }
-
 
     /*
      if (keyboardState.IsKeyDown(Keys.H) && !disparo1)
