@@ -32,6 +32,19 @@ namespace Juego
 
     public class Game1 : Game
     {
+        /*
+         Mas importantes:
+        -Sistema de ki, que condicione la cantidad de ataque
+        -Limites de la pantalla
+        -Los ataques empiezen desde la mitad del jugador
+        -Hacer un menu
+        -Poder elegir personajes y controles
+        -Transformaciones
+         Menos imporatantes:
+        -Remplazar el modo de disparo
+        -Ataques especiales
+        -Modificar skills de los jugadores
+         */
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private SpriteFont _spriteFont;
