@@ -66,3 +66,8 @@ C:\valera\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.genruntimecon
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\ref\Juego.dll
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\particula.xnb
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\particula1.xnb
+C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\mifondo.xnb
+C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\fuente.xnb
+C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n1.xnb
+C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n2.xnb
+C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n3.xnb

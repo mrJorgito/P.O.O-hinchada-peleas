@@ -27,8 +27,8 @@ namespace Juego
             bban = false;
             bban1 = false;
             fijo3 = px1;
-            _objetivoPosition1.Y = py1;
-            _objetivoPosition1.X = px1;
+            _objetivoPosition1.Y = py2;
+            _objetivoPosition1.X = px2;
             _ataquePosition1.X = float.Parse(((_ataquePosition1.Y - b1) / m1).ToString());
             float restador1 = _ataquePosition1.Y; //????
             float restador2 = _ataquePosition1.X; //????
@@ -37,13 +37,15 @@ namespace Juego
                 particulas.Add(new Particula(new Vector2(restador2,restador1)));
                 particulas.Add(new Particula(new Vector2(restador2-1,restador1-1)));
                 particulas.Add(new Particula(new Vector2(restador2+1,restador1+1)));
-                if ((restador2 >= fijo3 || bban) && !bban1)
+                particulas.Add(new Particula(new Vector2(restador2 - 2, restador1 - 2)));
+                particulas.Add(new Particula(new Vector2(restador2 + 2, restador1 + 2)));
+                if ((_objetivoPosition1.X >= fijo3 || bban) && !bban1)
                 {
                     if (m1 > 0) restador1 -= 0.5f;
                     else if (m1 < 0) restador1 += 0.5f;
                     restador2 = float.Parse(((restador1 - b1) / m1).ToString());
                 }
-                else if (restador2 < fijo3 || bban1)
+                else if (_objetivoPosition1.X < fijo3 || bban1)
                 {
                     if (m1 > 0) restador1 += 0.5f;
                     else if (m1 < 0) restador1 -= 0.5f;

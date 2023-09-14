@@ -29,7 +29,7 @@ namespace Juego
             fijo3 = px1;
         }
 
-        public bool AvanzarDisparo(Rectangle ataque, Rectangle objetivo)
+        public int AvanzarDisparo(Rectangle ataque, Rectangle objetivo)
         {
             if ((_ataquePosition1.X >= fijo3 || bban) && !bban1)
             {
@@ -38,7 +38,7 @@ namespace Juego
                 _ataquePosition1.X = float.Parse(((_ataquePosition1.Y - b1) / m1).ToString());
                 if (_ataquePosition1.X < 0)
                 {
-                    return true;
+                    return 3;
                 }
                 bban = true;
             }
@@ -49,15 +49,15 @@ namespace Juego
                 _ataquePosition1.X = float.Parse(((_ataquePosition1.Y - b1) / m1).ToString());
                 if (_ataquePosition1.X < 0)
                 {
-                    return true;
+                    return 3;
                 }
                 bban1 = true;
             }
             if (ataque.Intersects(objetivo))
             {
-                return true;
+                return 2;
             }
-            return false;
+            return 1;
         }
     }
 

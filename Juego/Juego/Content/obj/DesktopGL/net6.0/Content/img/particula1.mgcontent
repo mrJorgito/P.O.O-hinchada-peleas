@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/particula1.png</SourceFile>
-  <SourceTime>2023-09-08T15:13:32.8245514-03:00</SourceTime>
+  <SourceTime>2023-09-13T08:29:22.9434365-03:00</SourceTime>
   <DestFile>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/bin/DesktopGL/Content/img/particula1.xnb</DestFile>
-  <DestTime>2023-09-08T15:15:39.3365413-03:00</DestTime>
+  <DestTime>2023-09-13T08:32:08.1022489-03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T08:44:56-03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

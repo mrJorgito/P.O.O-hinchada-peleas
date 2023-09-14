@@ -1,2 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/particula.png","C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/bin/DesktopGL/img/particula.xnb","TextureProcessor","Texture2DContent",183,149,0,1037251
+"C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/n1.png","C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/bin/DesktopGL/img/n1.xnb","TextureProcessor","Texture2DContent",136,1229,0,245815
+"C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/n2.png","C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/bin/DesktopGL/img/n2.xnb","TextureProcessor","Texture2DContent",138,1229,0,004489
+"C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/n3.png","C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/bin/DesktopGL/img/n3.xnb","TextureProcessor","Texture2DContent",139,1229,0,001849
