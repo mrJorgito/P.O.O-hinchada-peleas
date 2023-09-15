@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\valera\\P.O.O-hinchada-peleas\\Juego\\Juego\\Juego.csproj": {}
+    "C:\\valera\\P.O.O-hinchada-peleas - copia\\Juego\\Juego\\Juego.csproj": {}
   },
   "projects": {
-    "C:\\valera\\P.O.O-hinchada-peleas\\Juego\\Juego\\Juego.csproj": {
+    "C:\\valera\\P.O.O-hinchada-peleas - copia\\Juego\\Juego\\Juego.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\valera\\P.O.O-hinchada-peleas\\Juego\\Juego\\Juego.csproj",
+        "projectUniqueName": "C:\\valera\\P.O.O-hinchada-peleas - copia\\Juego\\Juego\\Juego.csproj",
         "projectName": "Juego",
-        "projectPath": "C:\\valera\\P.O.O-hinchada-peleas\\Juego\\Juego\\Juego.csproj",
+        "projectPath": "C:\\valera\\P.O.O-hinchada-peleas - copia\\Juego\\Juego\\Juego.csproj",
         "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\valera\\P.O.O-hinchada-peleas\\Juego\\Juego\\obj\\",
+        "outputPath": "C:\\valera\\P.O.O-hinchada-peleas - copia\\Juego\\Juego\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

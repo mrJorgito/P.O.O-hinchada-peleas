@@ -4,22 +4,44 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/fuente.spritefont</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/bola (1).jpg</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/bola.jpg</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/fondo (1).png</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/fondo (2).png</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/fondo.png</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/goku (2).jpg</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/goku (3).jpg</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/mifondo.png</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/n1.png</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/n2.png</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/n3.png</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/particula.png</File>
-    <File>C:/valera/P.O.O-hinchada-peleas/Juego/Juego/Content/img/particula1.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/fuente.spritefont</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/bola (1).jpg</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/bola.jpg</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/defecto (1).jpg</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/defecto.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/fondo (1).png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/fondo (2).png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/fondo.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/goku (6).jpg</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/goku (7).jpg</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/mifondo.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/n1.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/n2.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/n3.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/n4.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/n5.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/n6.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/particula.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/particula1.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/Play.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/s1 (1).png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/s1.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/s2 (1).png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/s2.png</File>
+    <File>C:/valera/P.O.O-hinchada-peleas - copia/Juego/Juego/Content/img/Titulo.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

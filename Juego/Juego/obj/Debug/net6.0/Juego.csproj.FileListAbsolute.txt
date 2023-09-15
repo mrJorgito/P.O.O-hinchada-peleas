@@ -37,8 +37,6 @@ C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\fondo (
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\fondo (2).xnb
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\fondo (3).xnb
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\fondo.xnb
-C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\goku (2).xnb
-C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\goku (3).xnb
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Juego.exe
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Juego.deps.json
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Juego.runtimeconfig.json
@@ -71,3 +69,59 @@ C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\fuente.xnb
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n1.xnb
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n2.xnb
 C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n3.xnb
+C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n4.xnb
+C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n5.xnb
+C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n6.xnb
+C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\goku (6).xnb
+C:\valera\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\goku (7).xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\fondo (3).xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\fuente.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\bola (1).xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\bola.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\fondo (1).xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\fondo (2).xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\fondo.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\goku (6).xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\goku (7).xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\mifondo.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\n1.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\n2.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\n3.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\n4.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\n5.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\n6.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\particula.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\particula1.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Juego.exe
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Juego.deps.json
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Juego.runtimeconfig.json
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Juego.dll
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Juego.pdb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\MonoGame.Framework.dll
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\obj\Debug\net6.0\Juego.csproj.AssemblyReference.cache
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\obj\Debug\net6.0\Juego.GeneratedMSBuildEditorConfig.editorconfig
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\obj\Debug\net6.0\Juego.AssemblyInfoInputs.cache
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\obj\Debug\net6.0\Juego.AssemblyInfo.cs
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\obj\Debug\net6.0\Juego.csproj.CoreCompileInputs.cache
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\obj\Debug\net6.0\Juego.csproj.CopyComplete
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\obj\Debug\net6.0\Juego.dll
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\obj\Debug\net6.0\refint\Juego.dll
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\obj\Debug\net6.0\Juego.pdb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\obj\Debug\net6.0\Juego.genruntimeconfig.cache
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\obj\Debug\net6.0\ref\Juego.dll
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\defecto.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\Play.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\Titulo.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\defecto (1).xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\s1.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\s2.xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\s1 (1).xnb
+C:\valera\P.O.O-hinchada-peleas - copia\Juego\Juego\bin\Debug\net6.0\Content\img\s2 (1).xnb
