@@ -40,6 +40,7 @@ namespace Juego
         -Transformaciones
         -Sistema de golpes a corta distancia
         -Acercamiento de la camara cuando los jugadores esten cerca
+        -Choque de kamehamehas (o como chota se escriba)
          Menos imporatantes:
         -Remplazar el modo de disparo
         -Ataques especiales
