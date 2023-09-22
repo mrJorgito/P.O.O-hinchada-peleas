@@ -20,23 +20,6 @@ namespace Juego
             this._ataqueEspecial = _ataqueEspecial;
             this.pos = pos;
         }
-        
-        public virtual void Arriba()
-        {
-            pos.Y -= 5;
-        }
-        public virtual void Abajo()
-        {
-            pos.Y += 5;
-        }
-        public virtual void Izquierda()
-        {
-            pos.X -= 5;
-        }
-        public virtual void Derecha()
-        {
-            pos.X += 5;
-        }
         public virtual void AtaqueNormal()
         {
 
