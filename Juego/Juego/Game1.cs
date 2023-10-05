@@ -34,7 +34,6 @@ namespace Juego
     {
         /*
          Mas importantes:
-        -Los ataques empiezen desde la mitad del jugador
         -Terminar el menu
         -Incluir las texturas de los personajes
         -Transformaciones
@@ -66,11 +65,15 @@ namespace Juego
         private List<List<Texture2D>> texturas;
         private List<List<bool>> skills;
 
+        private float zoom = 1.0f;
+        private Vector2 cam = Vector2.Zero;
+        private Matrix originalMatrix;
+
         private bool _manzanaTocada = false, salto = false, _manzanaTocada1 = false, salto1 = false, disparo1 = false, bban = false;
         private bool n1, n2; //bandera para innmovilizar mientras prepara ataque
 
         private bool u1, u2, u3, u4, k1, k2;
-        private int select1, select2;
+        private int select1, select2, ax1 = 10,ax2 = 0;
 
         public Game1()
         {
@@ -183,11 +186,25 @@ namespace Juego
             //MediaPlayer.IsRepeating = true;
             select1 = -1;
             select2 = -1;
+
+            //originalMatrix = _spriteBatch.GraphicsDevice.ge
         }
 
         protected override void Update(GameTime gameTime)
         {
             KeyboardState keyboardState = Keyboard.GetState();
+
+            if (keyboardState.IsKeyDown(Keys.N))
+            {
+                zoom += 0.1f;
+            }
+            if (keyboardState.IsKeyDown(Keys.M))
+            {
+                zoom -= 0.1f;
+            }
+            cam = new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2);
+
+            originalMatrix = Matrix.CreateTranslation(new Vector3(-cam, 0.0f)) * Matrix.CreateScale(zoom) * Matrix.CreateTranslation(new Vector3(cam, 0.0f));
 
             if (posPantalla == 1)
             {
@@ -277,7 +294,7 @@ namespace Juego
                 Rectangle pruebasRectangle1 = new Rectangle((int)_pruebasPosition1.X, (int)_pruebasPosition1.Y, _pruebasTexture1.Width, _pruebasTexture1.Height);
                 Rectangle manzanaRectangle = new Rectangle((int)_manzanaPosition.X, (int)_manzanaPosition.Y + (_manzanaTexture.Height / 3) * 2, _manzanaTexture.Width, _manzanaTexture.Height / 3);
 
-
+                
 
                 //primer jugador
                 if (keyboardState.IsKeyDown(Keys.Left) && _pruebasPosition1.X >= 5 && !n1 && !keyboardState.IsKeyDown(Keys.L)) _pruebasPosition1.X -= 5;
@@ -419,7 +436,40 @@ namespace Juego
                 {
                     _manzanaTocada1 = true;
                 }
-                if(ba1.vida == 0 || ba2.vida == 0)
+                if (t1 != null) {
+                    for (int i = (int)t1.non-200; i < (int)t1.non; i++)
+                    {
+                        Rectangle v = new Rectangle(
+                            (int)t1.particulas[i]._ataquePosition1.X,
+                            (int)t1.particulas[i]._ataquePosition1.Y,
+                            texturas[select1][4].Width,
+                            texturas[select1][4].Height);
+                        if (v.Intersects(pruebasRectangle1))
+                        {
+                            t1 = null;
+                            ba2.vida -= 500;
+                            break;
+                        }
+                    }
+                }
+                if (t2 != null)
+                {
+                    for (int i = (int)t1.non - 200; i < (int)t1.non; i++)
+                    {
+                        Rectangle v = new Rectangle(
+                            (int)t2.particulas[i]._ataquePosition1.X,
+                            (int)t2.particulas[i]._ataquePosition1.Y,
+                            texturas[select2][4].Width,
+                            texturas[select2][4].Height);
+                        if (v.Intersects(pruebasRectangle))
+                        {
+                            t2 = null;
+                            ba1.vida -= 500;
+                            break;
+                        }
+                    }
+                }
+                if (ba1.vida == 0 || ba2.vida == 0)
                 {
                     Exit();
                 }
@@ -432,8 +482,7 @@ namespace Juego
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             // Limpia 20 veces por segundo la imagen.
-
-            _spriteBatch.Begin();
+            _spriteBatch.Begin(transformMatrix:originalMatrix);
 
             if (posPantalla == 1)
             {
@@ -453,10 +502,20 @@ namespace Juego
             {
                 _spriteBatch.Draw(_manzanaTexture, _manzanaPosition, Color.White);
 
-                if(_pruebasPosition.X < _pruebasPosition1.X) _spriteBatch.Draw(texturas[select1][0], _pruebasPosition, Color.White);
-                else _spriteBatch.Draw(texturas[select1][1], _pruebasPosition, Color.White);
-                if (_pruebasPosition1.X < _pruebasPosition.X) _spriteBatch.Draw(texturas[select2][0], _pruebasPosition1, Color.White);
-                else _spriteBatch.Draw(texturas[select2][1], _pruebasPosition1, Color.White);
+                if (_pruebasPosition.X < _pruebasPosition1.X)
+                {
+                    _spriteBatch.Draw(texturas[select1][0], _pruebasPosition, Color.White);
+                    _spriteBatch.Draw(texturas[select2][1], _pruebasPosition1, Color.White);
+                    ax1 = 10;
+                    ax2 = 0;
+                }
+                else
+                {
+                    _spriteBatch.Draw(texturas[select1][1], _pruebasPosition, Color.White);
+                    _spriteBatch.Draw(texturas[select2][0], _pruebasPosition1, Color.White);
+                    ax1 = 0;
+                    ax2 = 10;
+                }
                 foreach (DisparoNormal d in p1)
                 {
                     _spriteBatch.Draw(d._ataque1, d._ataquePosition1, Color.White);
@@ -629,12 +688,12 @@ namespace Juego
         {
             if (xd)
             {
-                p2.Add(new DisparoNormal(_pruebasPosition.X,_pruebasPosition1.X,_pruebasPosition.Y,_pruebasPosition1.Y));
+                p2.Add(new DisparoNormal(_pruebasPosition.X, _pruebasPosition1.X + ax2,_pruebasPosition.Y,_pruebasPosition1.Y+13));
                 p2[p2.Count-1]._ataque1 = Content.Load<Texture2D>("img/bola (1)");
             }
             else
             {
-                p1.Add(new DisparoNormal(_pruebasPosition1.X, _pruebasPosition.X, _pruebasPosition1.Y, _pruebasPosition.Y));
+                p1.Add(new DisparoNormal(_pruebasPosition1.X, _pruebasPosition.X + ax1, _pruebasPosition1.Y, _pruebasPosition.Y+13));
                 p1[p1.Count - 1]._ataque1 = Content.Load<Texture2D>("img/bola (1)");
             }
         }

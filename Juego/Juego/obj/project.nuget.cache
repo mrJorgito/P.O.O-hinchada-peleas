@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WwXu8Y0+I3kUDNPdgbvZ9RrqUKxj1xsVInTwPFpeqADH4uwAE71TgeypNOoFgFKQgNl/pOlAF0dB8ZQElsHibQ==",
+  "dgSpecHash": "ZlVL1z69TDTFkDSoDWMuEns5T2xM8Vzh9iAzh+PRFzWhquCG+LPEt8ew0ouk3Mz7k2iB9ecPVh/h0yuBFObKyg==",
   "success": true,
-  "projectFilePath": "C:\\valera\\P.O.O-hinchada-peleas - copia\\Juego\\Juego\\Juego.csproj",
+  "projectFilePath": "C:\\valera\\xd\\P.O.O-hinchada-peleas\\Juego\\Juego\\Juego.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alumno\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
     "C:\\Users\\Alumno\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
