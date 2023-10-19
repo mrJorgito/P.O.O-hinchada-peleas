@@ -8,6 +8,9 @@ using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Juego
 {
@@ -57,13 +60,16 @@ namespace Juego
         private Song _backgroundMusic;
         private Barra ba1,ba2,ba3,ba4;
         private int posPantalla = 1;
-        private float posInicial = 0, posInicial1 = 0, at1=0,at=0;
+        private float posInicial = 0, posInicial1 = 0, at1=0,at=0,zoomp=1;
         private double distInicial1, dif1, co1,ca1,md1 = 0,xd1, marca, cont;
         private float m1, b1, fijo1, fijo2, fijo3, fijo4;
         private List<DisparoNormal> p1 = new List<DisparoNormal>(), p2 = new List<DisparoNormal>();
         private EspecialDisparo t1, t2;
         private List<List<Texture2D>> texturas;
         private List<List<bool>> skills;
+
+        private DateTime tiempo;
+        private TimeSpan dif;
 
         private float zoom = 1.0f;
         private Vector2 cam = Vector2.Zero;
@@ -91,6 +97,7 @@ namespace Juego
 
         protected override void LoadContent()
         {
+            tiempo = DateTime.Now;
             play = Content.Load<Texture2D>("img/Play");
             playVector = new Vector2(GraphicsDevice.Viewport.Width / 2 - play.Width / 2, 340);
             titulo = Content.Load<Texture2D>("img/Titulo");
@@ -192,6 +199,7 @@ namespace Juego
 
         protected override void Update(GameTime gameTime)
         {
+            dif = DateTime.Now - tiempo;
             KeyboardState keyboardState = Keyboard.GetState();
 
             if (keyboardState.IsKeyDown(Keys.N))
@@ -204,7 +212,9 @@ namespace Juego
             }
             cam = new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2);
 
-            originalMatrix = Matrix.CreateTranslation(new Vector3(-cam, 0.0f)) * Matrix.CreateScale(zoom) * Matrix.CreateTranslation(new Vector3(cam, 0.0f));
+
+            
+
 
             if (posPantalla == 1)
             {
@@ -290,6 +300,50 @@ namespace Juego
             }
             else if (posPantalla == 3)
             {
+                Vector2 hi = _pruebasPosition;
+                Vector2 ha = _pruebasPosition1;
+
+                if (hi.X < 0)
+                    hi.X = -hi.X;
+                if (hi.Y < 0)
+                    hi.Y = -hi.Y;
+                if (ha.X < 0)
+                    ha.X = -ha.X;
+                if (ha.Y < 0)
+                    ha.Y = -ha.Y;
+
+                float pic = hi.X - ha.X;
+                float pec = hi.Y - ha.Y;
+                Vector2 ze = _pruebasPosition1;
+                Vector2 za = _pruebasPosition1;
+
+                if (pic < 0)
+                {
+                    pic = ha.X - hi.X;
+                    ze = _pruebasPosition;
+                }
+                if (pec < 0)
+                {
+                    pec = ha.Y - hi.Y;
+                    za = _pruebasPosition;
+                }
+
+
+                if (pec < 200 && pic < 200)
+                {
+                    cam = new Vector2(ze.X + pic / 2, za.Y + pec / 2);
+                    zoomp = 1f + ((200 - pic) / 150 + (200 - pec) / 200);
+                }
+                else
+                {
+                    cam = new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2);
+                    zoomp = 1;
+                }
+
+                /*float m1 = (_pruebasPosition.Y - _pruebasPosition1.Y) / (_pruebasPosition.X - _pruebasPosition1.X);
+                float b1 = _pruebasPosition1.Y - (m1 * _pruebasPosition1.X);
+                */
+
                 Rectangle pruebasRectangle = new Rectangle((int)_pruebasPosition.X, (int)_pruebasPosition.Y, _pruebasTexture.Width, _pruebasTexture.Height);
                 Rectangle pruebasRectangle1 = new Rectangle((int)_pruebasPosition1.X, (int)_pruebasPosition1.Y, _pruebasTexture1.Width, _pruebasTexture1.Height);
                 Rectangle manzanaRectangle = new Rectangle((int)_manzanaPosition.X, (int)_manzanaPosition.Y + (_manzanaTexture.Height / 3) * 2, _manzanaTexture.Width, _manzanaTexture.Height / 3);
@@ -454,7 +508,7 @@ namespace Juego
                 }
                 if (t2 != null)
                 {
-                    for (int i = (int)t1.non - 200; i < (int)t1.non; i++)
+                    for (int i = (int)t2.non - 200; i < (int)t2.non; i++)
                     {
                         Rectangle v = new Rectangle(
                             (int)t2.particulas[i]._ataquePosition1.X,
@@ -475,6 +529,24 @@ namespace Juego
                 }
                 //}
             }
+            if (zoom != zoomp)
+            {
+                if(dif.Milliseconds % 10 == 0)
+                {
+                    if(zoom > zoomp)
+                    {
+                        zoom -= 0.01f;
+                    }
+                    else
+                    {
+                        zoom += 0.01f;
+                    }
+                    Debug.Write("xd");
+
+                }
+            }
+            originalMatrix = Matrix.CreateTranslation(new Vector3(-cam, 0.0f)) * Matrix.CreateScale(zoom) * Matrix.CreateTranslation(new Vector3(cam, 0.0f));
+
             base.Update(gameTime);
         }
 
