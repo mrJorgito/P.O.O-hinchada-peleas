@@ -37,14 +37,13 @@ namespace Juego
     {
         /*
          Mas importantes:
+        -Remplazar el modo de disparo
         -Terminar el menu
         -Incluir las texturas de los personajes
-        -Transformaciones
         -Sistema de golpes a corta distancia
-        -Acercamiento de la camara cuando los jugadores esten cerca
         -Choque de kamehamehas (o como chota se escriba)
-         Menos imporatantes:
-        -Remplazar el modo de disparo
+         Menos importantes:
+        -Transformaciones
         -Ataques especiales
         -Modificar skills de los jugadores
          */
@@ -531,18 +530,17 @@ namespace Juego
             }
             if (zoom != zoomp)
             {
-                if(dif.Milliseconds % 10 == 0)
+                if (zoom > zoomp)
                 {
-                    if(zoom > zoomp)
+                    zoom = zoomp;
+                }
+                else if(zoom < zoomp)
+                {
+                    if (dif.Milliseconds > 10)
                     {
-                        zoom -= 0.01f;
-                    }
-                    else
-                    {
+                        tiempo = DateTime.Now;
                         zoom += 0.01f;
                     }
-                    Debug.Write("xd");
-
                 }
             }
             originalMatrix = Matrix.CreateTranslation(new Vector3(-cam, 0.0f)) * Matrix.CreateScale(zoom) * Matrix.CreateTranslation(new Vector3(cam, 0.0f));
@@ -607,7 +605,7 @@ namespace Juego
                             _spriteBatch.Draw(texturas[select1][3], t1.particulas[i]._ataquePosition1, Color.White);
                     }
                     t1.non += 50;
-                    if (t1.non == t1.particulas.Count)
+                    if (t1.non == t1.particulas.Count || t1.particulas.Count - 50 < t1.non)
                     {
                         t1 = null;
                     }
@@ -625,7 +623,7 @@ namespace Juego
                             _spriteBatch.Draw(texturas[select2][3], t2.particulas[i]._ataquePosition1, Color.White);
                     }
                     t2.non += 50;
-                    if (t2.non == t2.particulas.Count)
+                    if (t2.non == t2.particulas.Count || t2.particulas.Count - 50 < t2.non)
                     {
                         t2 = null;
                     }
@@ -774,12 +772,12 @@ namespace Juego
         {
             if (!xd)
             {
-                t1 = new EspecialDisparo(_pruebasPosition1.X, _pruebasPosition.X, _pruebasPosition1.Y, _pruebasPosition.Y,particula);
+                t1 = new EspecialDisparo(_pruebasPosition1.X, _pruebasPosition.X+ax1, _pruebasPosition1.Y, _pruebasPosition.Y+13,particula);
                 
             }
             else
             {
-                t2 = new EspecialDisparo(_pruebasPosition.X, _pruebasPosition1.X, _pruebasPosition.Y, _pruebasPosition1.Y, particula);
+                t2 = new EspecialDisparo(_pruebasPosition.X, _pruebasPosition1.X+ax2, _pruebasPosition.Y, _pruebasPosition1.Y+13, particula);
             }
         }
 

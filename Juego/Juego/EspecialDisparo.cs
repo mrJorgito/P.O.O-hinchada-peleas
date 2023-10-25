@@ -32,7 +32,21 @@ namespace Juego
             _ataquePosition1.X = float.Parse(((_ataquePosition1.Y - b1) / m1).ToString());
             float restador1 = _ataquePosition1.Y; //????
             float restador2 = _ataquePosition1.X; //????
-            for (int i = 0; i < 1600; i++)
+            /*double temp;
+            if (m1 >= 0 && m1 < 0.5)
+            {
+                temp = 6400*(0.5-m1);
+            }
+            else if (m1 < 0 && m1 > -0.5)
+            {
+                temp = 6400 * (-0.5-m1);
+            }
+            else
+            {
+                temp = 1600;
+            }
+            for (float i = 0; i < temp; i++)*/
+            for (float i = 0; i < 6400; i++)
             {
                 particulas.Add(new Particula(new Vector2(restador2,restador1)));
                 particulas.Add(new Particula(new Vector2(restador2-1,restador1-1)));
@@ -41,14 +55,14 @@ namespace Juego
                 particulas.Add(new Particula(new Vector2(restador2 + 2, restador1 + 2)));
                 if ((_objetivoPosition1.X >= fijo3 || bban) && !bban1)
                 {
-                    if (m1 > 0) restador1 -= 0.5f;
-                    else if (m1 < 0) restador1 += 0.5f;
+                    if (m1 >= 0) restador1 -= 0.03f;
+                    else if (m1 < 0) restador1 += 0.03f;
                     restador2 = float.Parse(((restador1 - b1) / m1).ToString());
                 }
                 else if (_objetivoPosition1.X < fijo3 || bban1)
                 {
-                    if (m1 > 0) restador1 += 0.5f;
-                    else if (m1 < 0) restador1 -= 0.5f;
+                    if (m1 >= 0) restador1 += 0.03f;
+                    else if (m1 < 0) restador1 -= 0.03f;
                     restador2 = float.Parse(((restador1 - b1) / m1).ToString());
                 }
             }
