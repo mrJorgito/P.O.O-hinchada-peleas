@@ -37,10 +37,10 @@ namespace Juego
     {
         /*
          Mas importantes:
-        -Terminar el menu
-        -Incluir las texturas de los personajes
+        -Terminar el menu(parcialmente)
+        -Incluir las texturas de los personajes(parcialmente)
         -Sistema de golpes a corta distancia
-        -Choque de kamehamehas (o como chota se escriba)
+        -Choque de kamehamehas (o como se escriba)
          Menos importantes:
         -Transformaciones
         -Ataques especiales
@@ -65,6 +65,7 @@ namespace Juego
         private EspecialDisparo t1, t2;
         private List<List<Texture2D>> texturas;
         private List<List<bool>> skills;
+        private Golpe g1, g2;
 
         private DateTime tiempo;
         private TimeSpan dif;
@@ -77,7 +78,7 @@ namespace Juego
         private bool n1, n2; //bandera para innmovilizar mientras prepara ataque
 
         private bool u1, u2, u3, u4, k1, k2;
-        private int select1, select2, ax1 = 10,ax2 = 0,sp1 = 0, sp2 = 0;
+        private int select1, select2, ax1 = 10,ax2 = 0,sp1 = 0, sp2 = 0,sp3 = 0;
 
         public Game1()
         {
@@ -409,10 +410,10 @@ namespace Juego
 
                 if (keyboardState.IsKeyDown(Keys.A) && !n2 && _pruebasPosition.X >= 5 && !keyboardState.IsKeyDown(Keys.V))
                 {
-                    sp1 = 1;
+                    sp3 = 1;
                     _pruebasPosition.X -= 5;
                 }
-                else if (keyboardState.IsKeyUp(Keys.A)) sp1 = 0;
+                else if (keyboardState.IsKeyUp(Keys.A)) sp3 = 0;
 
                 if (keyboardState.IsKeyDown(Keys.D) && !n2 && _pruebasPosition.X + _ataque1.Width <= 795 && !keyboardState.IsKeyDown(Keys.V))
                 {
@@ -442,55 +443,92 @@ namespace Juego
                 }
                 if (keyboardState.IsKeyDown(Keys.S) && !_manzanaTocada && !n2 && skills[select1][0] && !keyboardState.IsKeyDown(Keys.V)) _pruebasPosition.Y += 5;
 
-
-                if (keyboardState.IsKeyDown(Keys.K) && t2 == null && ba4.vida >= 10 && !keyboardState.IsKeyDown(Keys.L))
+                if (pec < 200 && pic < 200)
                 {
-                    ba4.vida -= 10;
-                    at1++;
-                    n1 = true;
-                }
-                if (keyboardState.IsKeyUp(Keys.K))
-                {
-                    if (at1 > 20)
+                    if (keyboardState.IsKeyDown(Keys.K) && ba4.vida >= 10 && !keyboardState.IsKeyDown(Keys.L))
                     {
-                        EspecialDisparo(true);
+                        ba4.vida -= 10;
+                        Golpe(true);
                     }
-                    else if (at1 > 0)
+                    if (keyboardState.IsKeyDown(Keys.L) && ba4.vida <= 2990 && !keyboardState.IsKeyDown(Keys.K))
                     {
-                        NuevoDisparo(true);
+                        ba4.vida += 5;
                     }
-                    at1 = 0;
-                    n1 = false;
-                }
-                if (keyboardState.IsKeyDown(Keys.L) && ba4.vida <= 2990 && !keyboardState.IsKeyDown(Keys.K))
-                {
-                    ba4.vida += 5;
-                }
-                if (keyboardState.IsKeyDown(Keys.C) && t1 == null && ba3.vida >= 10 && !keyboardState.IsKeyDown(Keys.V))
-                {
-                    ba3.vida -= 10;
-                    at++;
-                    n2 = true;
-                }
-                if (keyboardState.IsKeyUp(Keys.C))
-                {
-                    if (at > 50)
+                    if (keyboardState.IsKeyDown(Keys.C) && t1 == null && ba3.vida >= 10 && !keyboardState.IsKeyDown(Keys.V))
                     {
-                        EspecialDisparo(false);
+                        ba3.vida -= 10;
+                        at++;
+                        n2 = true;
                     }
-                    else if (at > 0)
+                    if (keyboardState.IsKeyUp(Keys.C))
                     {
-                        NuevoDisparo(false);
+                        if (at > 50)
+                        {
+                            EspecialDisparo(false);
+                        }
+                        else if (at > 0)
+                        {
+                            NuevoDisparo(false);
+                        }
+                        at = 0;
+                        n2 = false;
                     }
-                    at = 0;
-                    n2 = false;
+                    if (keyboardState.IsKeyDown(Keys.V) && ba3.vida <= 2990 && !keyboardState.IsKeyDown(Keys.C))
+                    {
+                        ba3.vida += 5;
+                    }
+                    AvanzarDisparos(pruebasRectangle, pruebasRectangle1);
                 }
-                if (keyboardState.IsKeyDown(Keys.V) && ba3.vida <= 2990 && !keyboardState.IsKeyDown(Keys.C))
+                else
                 {
-                    ba3.vida += 5;
+                    if (keyboardState.IsKeyDown(Keys.K) && t2 == null && ba4.vida >= 10 && !keyboardState.IsKeyDown(Keys.L))
+                    {
+                        ba4.vida -= 10;
+                        at1++;
+                        n1 = true;
+                    }
+                    if (keyboardState.IsKeyUp(Keys.K))
+                    {
+                        if (at1 > 20)
+                        {
+                            EspecialDisparo(true);
+                        }
+                        else if (at1 > 0)
+                        {
+                            NuevoDisparo(true);
+                        }
+                        at1 = 0;
+                        n1 = false;
+                    }
+                    if (keyboardState.IsKeyDown(Keys.L) && ba4.vida <= 2990 && !keyboardState.IsKeyDown(Keys.K))
+                    {
+                        ba4.vida += 5;
+                    }
+                    if (keyboardState.IsKeyDown(Keys.C) && t1 == null && ba3.vida >= 10 && !keyboardState.IsKeyDown(Keys.V))
+                    {
+                        ba3.vida -= 10;
+                        at++;
+                        n2 = true;
+                    }
+                    if (keyboardState.IsKeyUp(Keys.C))
+                    {
+                        if (at > 50)
+                        {
+                            EspecialDisparo(false);
+                        }
+                        else if (at > 0)
+                        {
+                            NuevoDisparo(false);
+                        }
+                        at = 0;
+                        n2 = false;
+                    }
+                    if (keyboardState.IsKeyDown(Keys.V) && ba3.vida <= 2990 && !keyboardState.IsKeyDown(Keys.C))
+                    {
+                        ba3.vida += 5;
+                    }
+                    AvanzarDisparos(pruebasRectangle, pruebasRectangle1);
                 }
-                AvanzarDisparos(pruebasRectangle, pruebasRectangle1);
-
                 //nuevo
 
                 /*if (salto1)
@@ -618,17 +656,19 @@ namespace Juego
 
                 if (_pruebasPosition.X < _pruebasPosition1.X)
                 {
-                    if(sp1 == 1)
-                    _spriteBatch.Draw(texturas[select1][7], _pruebasPosition, Color.White);
-                    else if(sp1 == 2)
-                    _spriteBatch.Draw(texturas[select1][5], _pruebasPosition, Color.White);
+                    if (sp3 == 1)
+                    {
+                        _spriteBatch.Draw(texturas[select1][7], _pruebasPosition, Color.White);
+                    }
+                    else if (sp1 == 2)
+                        _spriteBatch.Draw(texturas[select1][5], _pruebasPosition, Color.White);
                     else
                         _spriteBatch.Draw(texturas[select1][0], _pruebasPosition, Color.White);
 
                     if(sp2 == 1)
-                    _spriteBatch.Draw(texturas[select2][8], _pruebasPosition1, Color.White);
-                    else if(sp2 == 2)
                     _spriteBatch.Draw(texturas[select2][6], _pruebasPosition1, Color.White);
+                    else if(sp2 == 2)
+                    _spriteBatch.Draw(texturas[select2][8], _pruebasPosition1, Color.White);
                     else
                     _spriteBatch.Draw(texturas[select2][1], _pruebasPosition1, Color.White);
 
@@ -637,7 +677,7 @@ namespace Juego
                 }
                 else
                 {
-                    if (sp1 == 1)
+                    if (sp3 == 1)
                         _spriteBatch.Draw(texturas[select1][6], _pruebasPosition, Color.White);
                     else if (sp1 == 2)
                         _spriteBatch.Draw(texturas[select1][8], _pruebasPosition, Color.White);
@@ -819,6 +859,18 @@ namespace Juego
             _spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        void Golpe(bool xd)
+        {
+            if (xd)
+            {
+                g2 = new Golpe(_pruebasPosition.X, _pruebasPosition1.X + ax2, _pruebasPosition.Y, _pruebasPosition1.Y + 13);
+            }
+            else
+            {
+                g1 = new Golpe(_pruebasPosition1.X, _pruebasPosition.X + ax1, _pruebasPosition1.Y, _pruebasPosition.Y + 13);
+            }
         }
 
         void NuevoDisparo(bool xd)
