@@ -16,6 +16,7 @@ namespace Juego
         public bool disparo1, bban, bban1;
         public double m1, b1, fijo3, cont = 0, non = 200;
         public List<Particula> particulas = new List<Particula>();
+        public double sum;
 
         public EspecialDisparo(float px1, float px2, float py1, float py2, Texture2D texture)
         {
@@ -32,21 +33,28 @@ namespace Juego
             _ataquePosition1.X = float.Parse(((_ataquePosition1.Y - b1) / m1).ToString());
             float restador1 = _ataquePosition1.Y; //????
             float restador2 = _ataquePosition1.X; //????
-            /*double temp;
-            if (m1 >= 0 && m1 < 0.5)
+
+            /*if (m1 >= 1)
             {
-                temp = 6400*(0.5-m1);
+                sum = 300 * m1;
             }
-            else if (m1 < 0 && m1 > -0.5)
+            else if (m1 < 1)
             {
-                temp = 6400 * (-0.5-m1);
+                sum = 300 * -m1;
             }
             else
             {
-                temp = 1600;
+                sum = 200;
             }
-            for (float i = 0; i < temp; i++)*/
-            for (float i = 0; i < 6400; i++)
+            Debug.Write(sum);*/
+            float cim;
+            if (m1 < 1 && m1 >= 0)
+                cim = (float)(0.3 * m1 / 2);
+            else if (m1 > -1 && m1 < 0)
+                cim = (float)(0.3 * -m1 / 2);
+            else
+                cim = 0.15f;
+            for (float i = 0; i < 10000; i++)
             {
                 particulas.Add(new Particula(new Vector2(restador2,restador1)));
                 particulas.Add(new Particula(new Vector2(restador2-1,restador1-1)));
@@ -55,14 +63,14 @@ namespace Juego
                 particulas.Add(new Particula(new Vector2(restador2 + 2, restador1 + 2)));
                 if ((_objetivoPosition1.X >= fijo3 || bban) && !bban1)
                 {
-                    if (m1 >= 0) restador1 -= 0.03f;
-                    else if (m1 < 0) restador1 += 0.03f;
+                    if (m1 >= 0) restador1 -= cim;
+                    else if (m1 < 0) restador1 += cim;
                     restador2 = float.Parse(((restador1 - b1) / m1).ToString());
                 }
                 else if (_objetivoPosition1.X < fijo3 || bban1)
                 {
-                    if (m1 >= 0) restador1 += 0.03f;
-                    else if (m1 < 0) restador1 -= 0.03f;
+                    if (m1 >= 0) restador1 += cim;
+                    else if (m1 < 0) restador1 -= cim;
                     restador2 = float.Parse(((restador1 - b1) / m1).ToString());
                 }
             }

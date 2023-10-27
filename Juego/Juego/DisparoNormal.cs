@@ -31,10 +31,17 @@ namespace Juego
 
         public int AvanzarDisparo(Rectangle ataque, Rectangle objetivo)
         {
+            float cim;
+            if (m1 < 1 && m1 >= 0)
+                cim = (float)(12 * m1 / 2);
+            else if (m1 > -1 && m1 < 0)
+                cim = (float)(12 * -m1 / 2);
+            else
+                cim = 8;
             if ((_ataquePosition1.X >= fijo3 || bban) && !bban1)
             {
-                if (m1 > 0) _ataquePosition1.Y -= 5;
-                else if (m1 < 0) _ataquePosition1.Y += 5;
+                if (m1 > 0) _ataquePosition1.Y -= cim;
+                else if (m1 < 0) _ataquePosition1.Y += cim;
                 _ataquePosition1.X = float.Parse(((_ataquePosition1.Y - b1) / m1).ToString());
                 if (_ataquePosition1.X < 0)
                 {
@@ -44,8 +51,8 @@ namespace Juego
             }
             else if(_ataquePosition1.X < fijo3 || bban1)
             {
-                if (m1 > 0) _ataquePosition1.Y += 5;
-                else if (m1 < 0) _ataquePosition1.Y -= 5;
+                if (m1 > 0) _ataquePosition1.Y += cim;
+                else if (m1 < 0) _ataquePosition1.Y -= cim;
                 _ataquePosition1.X = float.Parse(((_ataquePosition1.Y - b1) / m1).ToString());
                 if (_ataquePosition1.X < 0)
                 {

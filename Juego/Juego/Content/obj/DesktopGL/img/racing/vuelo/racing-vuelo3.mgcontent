@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/racing/vuelo/racing-vuelo3.png</SourceFile>
-  <SourceTime>2023-10-05T14:01:09.8315949-03:00</SourceTime>
+  <SourceTime>2023-10-26T17:26:58.7944086-03:00</SourceTime>
   <DestFile>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/bin/DesktopGL/img/racing/vuelo/racing-vuelo3.xnb</DestFile>
-  <DestTime>2023-10-05T15:19:05.6123229-03:00</DestTime>
+  <DestTime>2023-10-26T17:28:15.3881082-03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T08:44:56-03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

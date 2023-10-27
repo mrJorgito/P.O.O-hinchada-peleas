@@ -37,7 +37,6 @@ namespace Juego
     {
         /*
          Mas importantes:
-        -Remplazar el modo de disparo
         -Terminar el menu
         -Incluir las texturas de los personajes
         -Sistema de golpes a corta distancia
@@ -78,7 +77,7 @@ namespace Juego
         private bool n1, n2; //bandera para innmovilizar mientras prepara ataque
 
         private bool u1, u2, u3, u4, k1, k2;
-        private int select1, select2, ax1 = 10,ax2 = 0;
+        private int select1, select2, ax1 = 10,ax2 = 0,sp1 = 0, sp2 = 0;
 
         public Game1()
         {
@@ -127,32 +126,56 @@ namespace Juego
 
             texturas = new List<List<Texture2D>>() {
                 new List<Texture2D> {
-                Content.Load<Texture2D>("img/goku (6)"),
-                Content.Load<Texture2D>("img/goku (7)"),
+                Content.Load<Texture2D>("img/racing/racing-base"),
+                Content.Load<Texture2D>("img/racing/racing-base (1)"),
                 Content.Load<Texture2D>("img/bola (1)"),
                 Content.Load<Texture2D>("img/particula"),
-                Content.Load<Texture2D>("img/particula1")
+                Content.Load<Texture2D>("img/particula1"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo2"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo2 (1)"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo3"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo3 (1)"),
+                Content.Load<Texture2D>("img/racing/ataque/racing-ataque2"),
+                Content.Load<Texture2D>("img/racing/ataque/racing-ataque2 (1)")
                 },
                 new List<Texture2D> {
-                Content.Load<Texture2D>("img/goku (6)"),
-                Content.Load<Texture2D>("img/goku (7)"),
+                Content.Load<Texture2D>("img/racing/racing-base"),
+                Content.Load<Texture2D>("img/racing/racing-base (1)"),
                 Content.Load<Texture2D>("img/bola (1)"),
                 Content.Load<Texture2D>("img/particula"),
-                Content.Load<Texture2D>("img/particula1")
+                Content.Load<Texture2D>("img/particula1"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo2"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo2 (1)"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo3"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo3 (1)"),
+                Content.Load<Texture2D>("img/racing/ataque/racing-ataque2"),
+                Content.Load<Texture2D>("img/racing/ataque/racing-ataque2 (1)")
                 },
                 new List<Texture2D> {
-                Content.Load<Texture2D>("img/goku (6)"),
-                Content.Load<Texture2D>("img/goku (7)"),
+                Content.Load<Texture2D>("img/racing/racing-base"),
+                Content.Load<Texture2D>("img/racing/racing-base (1)"),
                 Content.Load<Texture2D>("img/bola (1)"),
                 Content.Load<Texture2D>("img/particula"),
-                Content.Load<Texture2D>("img/particula1")
+                Content.Load<Texture2D>("img/particula1"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo2"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo2 (1)"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo3"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo3 (1)"),
+                Content.Load<Texture2D>("img/racing/ataque/racing-ataque2"),
+                Content.Load<Texture2D>("img/racing/ataque/racing-ataque2 (1)")
                 },
                 new List<Texture2D> {
-                Content.Load<Texture2D>("img/goku (6)"),
-                Content.Load<Texture2D>("img/goku (7)"),
+                Content.Load<Texture2D>("img/racing/racing-base"),
+                Content.Load<Texture2D>("img/racing/racing-base (1)"),
                 Content.Load<Texture2D>("img/bola (1)"),
                 Content.Load<Texture2D>("img/particula"),
-                Content.Load<Texture2D>("img/particula1")
+                Content.Load<Texture2D>("img/particula1"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo2"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo2 (1)"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo3"),
+                Content.Load<Texture2D>("img/racing/vuelo/racing-vuelo3 (1)"),
+                Content.Load<Texture2D>("img/racing/ataque/racing-ataque2"),
+                Content.Load<Texture2D>("img/racing/ataque/racing-ataque2 (1)")
                 }
             };
             skills = new List<List<bool>>()
@@ -330,8 +353,8 @@ namespace Juego
 
                 if (pec < 200 && pic < 200)
                 {
-                    cam = new Vector2(ze.X + pic / 2, za.Y + pec / 2);
-                    zoomp = 1f + ((200 - pic) / 150 + (200 - pec) / 200);
+                    cam = new Vector2(ze.X + pic/2, za.Y + pec/2);
+                    zoomp = 1f + ((200 - pic) / 150 + (200 - pec) / 150);
                 }
                 else
                 {
@@ -347,12 +370,21 @@ namespace Juego
                 Rectangle pruebasRectangle1 = new Rectangle((int)_pruebasPosition1.X, (int)_pruebasPosition1.Y, _pruebasTexture1.Width, _pruebasTexture1.Height);
                 Rectangle manzanaRectangle = new Rectangle((int)_manzanaPosition.X, (int)_manzanaPosition.Y + (_manzanaTexture.Height / 3) * 2, _manzanaTexture.Width, _manzanaTexture.Height / 3);
 
-                
+
 
                 //primer jugador
-                if (keyboardState.IsKeyDown(Keys.Left) && _pruebasPosition1.X >= 5 && !n1 && !keyboardState.IsKeyDown(Keys.L)) _pruebasPosition1.X -= 5;
-
-                if (keyboardState.IsKeyDown(Keys.Right) && !n1 && _pruebasPosition1.X + _ataque1.Width <= 795 && !keyboardState.IsKeyDown(Keys.L)) _pruebasPosition1.X += 5;
+                if (keyboardState.IsKeyDown(Keys.Left) && _pruebasPosition1.X >= 5 && !n1 && !keyboardState.IsKeyDown(Keys.L))
+                {
+                    sp2 = 1;
+                    _pruebasPosition1.X -= 5;
+                }
+                else if (keyboardState.IsKeyUp(Keys.Left)) sp2 = 0;
+                if (keyboardState.IsKeyDown(Keys.Right) && !n1 && _pruebasPosition1.X + _ataque1.Width <= 795 && !keyboardState.IsKeyDown(Keys.L))
+                {
+                    _pruebasPosition1.X += 5;
+                    sp2 = 2;
+                }
+                else if (keyboardState.IsKeyUp(Keys.Left)) sp2 = 0;
 
                 if (keyboardState.IsKeyDown(Keys.Up) && !salto1 && _manzanaTocada1 && !n1 && !skills[select2][0] && !keyboardState.IsKeyDown(Keys.L))
                 {
@@ -375,9 +407,19 @@ namespace Juego
                 }
                 if (keyboardState.IsKeyDown(Keys.Down) && !_manzanaTocada1 && !n1 && skills[select2][0] && !keyboardState.IsKeyDown(Keys.L)) _pruebasPosition1.Y += 5;
 
-                if (keyboardState.IsKeyDown(Keys.A) && !n2 && _pruebasPosition.X >= 5 && !keyboardState.IsKeyDown(Keys.V)) _pruebasPosition.X -= 5;
+                if (keyboardState.IsKeyDown(Keys.A) && !n2 && _pruebasPosition.X >= 5 && !keyboardState.IsKeyDown(Keys.V))
+                {
+                    sp1 = 1;
+                    _pruebasPosition.X -= 5;
+                }
+                else if (keyboardState.IsKeyUp(Keys.A)) sp1 = 0;
 
-                if (keyboardState.IsKeyDown(Keys.D) && !n2 && _pruebasPosition.X + _ataque1.Width <= 795 && !keyboardState.IsKeyDown(Keys.V)) _pruebasPosition.X += 5;
+                if (keyboardState.IsKeyDown(Keys.D) && !n2 && _pruebasPosition.X + _ataque1.Width <= 795 && !keyboardState.IsKeyDown(Keys.V))
+                {
+                    sp1 = 2;
+                    _pruebasPosition.X += 5;
+                }
+                else if (keyboardState.IsKeyUp(Keys.D)) sp1 = 0;
 
                 if (keyboardState.IsKeyDown(Keys.W) && !salto && _manzanaTocada && !n2 && !skills[select1][0] && !keyboardState.IsKeyDown(Keys.V))
                 {
@@ -534,7 +576,7 @@ namespace Juego
                 {
                     zoom = zoomp;
                 }
-                else if(zoom < zoomp)
+                else if(zoom < zoomp-1.5f)
                 {
                     if (dif.Milliseconds > 10)
                     {
@@ -557,7 +599,7 @@ namespace Juego
             if (posPantalla == 1)
             {
                 _spriteBatch.Draw(titulo, tituloVector, Color.White);
-                _spriteBatch.Draw(play, playVector, Color.White);
+                _spriteBatch.DrawString(_spriteFont,"Presione I/O para comenzar",new Vector2(300,350),Color.White);
             }
             else if(posPantalla == 2)
             {
@@ -567,6 +609,8 @@ namespace Juego
                 _spriteBatch.Draw(cuadro4, c4Vector, Color.White);
                 _spriteBatch.Draw(s1, s1Vector, Color.White);
                 _spriteBatch.Draw(s2, s2Vector, Color.White);
+                _spriteBatch.DrawString(_spriteFont, "Jugador 1 \nW. Saltar/Volar\nA. Derecha\nD. Izquierda\nS. Bajar\nC. Atacar\nV. Recargar", new Vector2(0, 450), Color.White);
+                _spriteBatch.DrawString(_spriteFont, "Jugador 2 \nFlechaArriba. Saltar/Volar\nFlechaDerecha. Derecha\nFlechaIzquierda. Izquierda\nFlechaAbajo. Bajar\nK. Atacar\nL. Recargar", new Vector2(600, 450), Color.White);
             }
             else if (posPantalla == 3)
             {
@@ -574,15 +618,38 @@ namespace Juego
 
                 if (_pruebasPosition.X < _pruebasPosition1.X)
                 {
-                    _spriteBatch.Draw(texturas[select1][0], _pruebasPosition, Color.White);
+                    if(sp1 == 1)
+                    _spriteBatch.Draw(texturas[select1][7], _pruebasPosition, Color.White);
+                    else if(sp1 == 2)
+                    _spriteBatch.Draw(texturas[select1][5], _pruebasPosition, Color.White);
+                    else
+                        _spriteBatch.Draw(texturas[select1][0], _pruebasPosition, Color.White);
+
+                    if(sp2 == 1)
+                    _spriteBatch.Draw(texturas[select2][8], _pruebasPosition1, Color.White);
+                    else if(sp2 == 2)
+                    _spriteBatch.Draw(texturas[select2][6], _pruebasPosition1, Color.White);
+                    else
                     _spriteBatch.Draw(texturas[select2][1], _pruebasPosition1, Color.White);
+
                     ax1 = 10;
                     ax2 = 0;
                 }
                 else
                 {
-                    _spriteBatch.Draw(texturas[select1][1], _pruebasPosition, Color.White);
-                    _spriteBatch.Draw(texturas[select2][0], _pruebasPosition1, Color.White);
+                    if (sp1 == 1)
+                        _spriteBatch.Draw(texturas[select1][6], _pruebasPosition, Color.White);
+                    else if (sp1 == 2)
+                        _spriteBatch.Draw(texturas[select1][8], _pruebasPosition, Color.White);
+                    else
+                        _spriteBatch.Draw(texturas[select1][1], _pruebasPosition, Color.White);
+
+                    if (sp2 == 1)
+                        _spriteBatch.Draw(texturas[select2][7], _pruebasPosition1, Color.White);
+                    else if (sp2 == 2)
+                        _spriteBatch.Draw(texturas[select2][5], _pruebasPosition1, Color.White);
+                    else
+                        _spriteBatch.Draw(texturas[select2][0], _pruebasPosition1, Color.White);
                     ax1 = 0;
                     ax2 = 10;
                 }
@@ -604,8 +671,8 @@ namespace Juego
                         else
                             _spriteBatch.Draw(texturas[select1][3], t1.particulas[i]._ataquePosition1, Color.White);
                     }
-                    t1.non += 50;
-                    if (t1.non == t1.particulas.Count || t1.particulas.Count - 50 < t1.non)
+                    t1.non += 200;
+                    if (t1.non == t1.particulas.Count || t1.particulas.Count - 200 < t1.non)
                     {
                         t1 = null;
                     }
@@ -622,8 +689,8 @@ namespace Juego
                         else
                             _spriteBatch.Draw(texturas[select2][3], t2.particulas[i]._ataquePosition1, Color.White);
                     }
-                    t2.non += 50;
-                    if (t2.non == t2.particulas.Count || t2.particulas.Count - 50 < t2.non)
+                    t2.non += 200;
+                    if (t2.non == t2.particulas.Count || t2.particulas.Count - t2.sum < t2.non)
                     {
                         t2 = null;
                     }

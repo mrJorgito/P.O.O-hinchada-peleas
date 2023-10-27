@@ -260,6 +260,18 @@
 /processorParam:TextureFormat=Color
 /build:img/racing/ataque/racing-ataque1.png
 
+#begin img/racing/ataque/racing-ataque2 (1).png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:img/racing/ataque/racing-ataque2 (1).png
+
 #begin img/racing/ataque/racing-ataque2.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -380,6 +392,18 @@
 /processorParam:TextureFormat=Color
 /build:img/racing/herido/racing-herido4.png
 
+#begin img/racing/racing-base (1).png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:img/racing/racing-base (1).png
+
 #begin img/racing/racing-base.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -404,6 +428,18 @@
 /processorParam:TextureFormat=Color
 /build:img/racing/vuelo/racing-vuelo1.png
 
+#begin img/racing/vuelo/racing-vuelo2 (1).png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:img/racing/vuelo/racing-vuelo2 (1).png
+
 #begin img/racing/vuelo/racing-vuelo2.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -415,6 +451,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:img/racing/vuelo/racing-vuelo2.png
+
+#begin img/racing/vuelo/racing-vuelo3 (1).png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:img/racing/vuelo/racing-vuelo3 (1).png
 
 #begin img/racing/vuelo/racing-vuelo3.png
 /importer:TextureImporter

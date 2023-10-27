@@ -187,7 +187,11 @@ C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\raci
 C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\herido\racing-herido2.xnb
 C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\herido\racing-herido3.xnb
 C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\herido\racing-herido4.xnb
-C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\racing-base.xnb
 C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo1.xnb
 C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo2.xnb
 C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo3.xnb
+C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\racing-base.xnb
+C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\racing-base (1).xnb
+C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\ataque\racing-ataque2 (1).xnb
+C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo2 (1).xnb
+C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo3 (1).xnb
