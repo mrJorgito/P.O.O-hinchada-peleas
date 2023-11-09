@@ -195,3 +195,4 @@ C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\raci
 C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\ataque\racing-ataque2 (1).xnb
 C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo2 (1).xnb
 C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo3 (1).xnb
+C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\ataque\racing-ataque3 (1).xnb

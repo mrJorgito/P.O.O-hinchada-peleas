@@ -5,7 +5,7 @@
   <Config />
   <SourceFiles>
     <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/fuente.spritefont</File>
-    <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/bola (1).jpg</File>
+    <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/bola (1).png</File>
     <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/bola.jpg</File>
     <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/defecto (1).jpg</File>
     <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/defecto.png</File>
@@ -27,6 +27,7 @@
     <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/racing/ataque/racing-ataque1.png</File>
     <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/racing/ataque/racing-ataque2 (1).png</File>
     <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/racing/ataque/racing-ataque2.png</File>
+    <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/racing/ataque/racing-ataque3 (1).png</File>
     <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/racing/ataque/racing-ataque3.png</File>
     <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/racing/ataque/racing-ataque4.png</File>
     <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/racing/caminar/racing-caminar1.png</File>
@@ -50,6 +51,7 @@
     <File>C:/valera/xd/P.O.O-hinchada-peleas/Juego/Juego/Content/img/Titulo.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -20,7 +20,7 @@
 /processorParam:TextureFormat=Compressed
 /build:fuente.spritefont
 
-#begin img/bola (1).jpg
+#begin img/bola (1).png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -30,7 +30,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:img/bola (1).jpg
+/build:img/bola (1).png
 
 #begin img/bola.jpg
 /importer:TextureImporter
@@ -283,6 +283,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:img/racing/ataque/racing-ataque2.png
+
+#begin img/racing/ataque/racing-ataque3 (1).png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:img/racing/ataque/racing-ataque3 (1).png
 
 #begin img/racing/ataque/racing-ataque3.png
 /importer:TextureImporter
