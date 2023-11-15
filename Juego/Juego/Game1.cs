@@ -68,7 +68,7 @@ namespace Juego
         private Golpe g1, g2;
         private Rectangle golpe,golpe1,piso,piso1,techo,techo1;
 
-        private DateTime tiempo,tiempo1;
+        private DateTime tiempo,tiempo1,tiempo3;
         private TimeSpan dif;
 
         private float zoom = 1.0f;
@@ -99,6 +99,7 @@ namespace Juego
         protected override void LoadContent()
         {
             tiempo = DateTime.Now;
+            tiempo3 = DateTime.Now;
             tiempo1 = DateTime.Now;
             play = Content.Load<Texture2D>("img/Play");
             playVector = new Vector2(GraphicsDevice.Viewport.Width / 2 - play.Width / 2, 340);
@@ -233,7 +234,7 @@ namespace Juego
 
         protected override void Update(GameTime gameTime)
         {
-            dif = DateTime.Now - tiempo;
+            dif = DateTime.Now - tiempo3;
             KeyboardState keyboardState = Keyboard.GetState();
 
             if (keyboardState.IsKeyDown(Keys.N))
@@ -481,8 +482,8 @@ namespace Juego
                     //primer jugador
                     if (keyboardState.IsKeyDown(Keys.Left) && _pruebasPosition1.X >= 5 && !n1 && !keyboardState.IsKeyDown(Keys.L))
                     {
-                        sp2 = 1;
                         _pruebasPosition1.X -= 5;
+                        sp2 = 1;
                     }
                     else if (keyboardState.IsKeyUp(Keys.Left)) sp2 = 0;
                     if (keyboardState.IsKeyDown(Keys.Right) && !n1 && _pruebasPosition1.X + _ataque1.Width <= 795 && !keyboardState.IsKeyDown(Keys.L))
@@ -490,7 +491,7 @@ namespace Juego
                         _pruebasPosition1.X += 5;
                         sp2 = 2;
                     }
-                    else if (keyboardState.IsKeyUp(Keys.Right)) sp2 = 0;
+                    else if (keyboardState.IsKeyUp(Keys.Right) && !keyboardState.IsKeyDown(Keys.Left)) sp2 = 0;
 
                     if (keyboardState.IsKeyDown(Keys.Up) && !salto1 && _manzanaTocada1 && !n1 && !skills[select2][0] && !keyboardState.IsKeyDown(Keys.L))
                     {
@@ -564,7 +565,7 @@ namespace Juego
                     {
                         def2 = true;
                     }
-                    else if (keyboardState.IsKeyUp(Keys.L)) def2 = false;
+                    else if (keyboardState.IsKeyUp(Keys.L) ) def2 = false;
                     if (keyboardState.IsKeyDown(Keys.C) && ba3.vida >= 10 && !keyboardState.IsKeyDown(Keys.V) && !gh)
                     {
                         if(def2 == false)
@@ -724,7 +725,7 @@ namespace Juego
                 {
                     if (dif.Milliseconds > 10)
                     {
-                        tiempo = DateTime.Now;
+                        tiempo3 = DateTime.Now;
                         zoom += 0.01f;
                     }
                 }
@@ -770,14 +771,14 @@ namespace Juego
                     }
                     else if (sp1 == 2)
                         _spriteBatch.Draw(texturas[select1][5], _pruebasPosition, Color.White);
-                    else if(!(no.TotalMilliseconds < 500) && !Keyboard.GetState().IsKeyDown(Keys.V))
+                    else if(!(no.TotalMilliseconds < 250) && !Keyboard.GetState().IsKeyDown(Keys.V))
                         _spriteBatch.Draw(texturas[select1][0], _pruebasPosition, Color.White);
 
                     if(sp2 == 1)
                     _spriteBatch.Draw(texturas[select2][6], _pruebasPosition1, Color.White);
                     else if(sp2 == 2)
                     _spriteBatch.Draw(texturas[select2][8], _pruebasPosition1, Color.White);
-                    else if(!(si.TotalMilliseconds < 500) && !Keyboard.GetState().IsKeyDown(Keys.L))
+                    else if(!(si.TotalMilliseconds < 250) && !Keyboard.GetState().IsKeyDown(Keys.L))
                     _spriteBatch.Draw(texturas[select2][1], _pruebasPosition1, Color.White);
 
                     if (Keyboard.GetState().IsKeyDown(Keys.C) && !a)
@@ -785,11 +786,11 @@ namespace Juego
                         tiempo = DateTime.Now;
                         a = true;
                     }
-
+                    Debug.Print(no.TotalMilliseconds.ToString());
                     if (Keyboard.GetState().IsKeyDown(Keys.L)) _spriteBatch.Draw(texturas[select2][12], _pruebasPosition1, Color.White);
                     if (Keyboard.GetState().IsKeyDown(Keys.V)) _spriteBatch.Draw(texturas[select1][11], _pruebasPosition, Color.White);
 
-                    if (no.TotalMilliseconds < 500) _spriteBatch.Draw(texturas[select1][9], _pruebasPosition, Color.White);
+                    if (no.TotalMilliseconds < 250) _spriteBatch.Draw(texturas[select1][9], _pruebasPosition, Color.White);
                     else a = false;
 
 
@@ -798,7 +799,7 @@ namespace Juego
                         tiempo1 = DateTime.Now;
                         a1 = true;
                     }
-                    if (si.TotalMilliseconds < 500) _spriteBatch.Draw(texturas[select2][10], _pruebasPosition1, Color.White);
+                    if (si.TotalMilliseconds < 250) _spriteBatch.Draw(texturas[select2][10], _pruebasPosition1, Color.White);
                     else a1 = false;
 
                     ax1 = 10;
@@ -810,14 +811,14 @@ namespace Juego
                         _spriteBatch.Draw(texturas[select1][6], _pruebasPosition, Color.White);
                     else if (sp1 == 2)
                         _spriteBatch.Draw(texturas[select1][8], _pruebasPosition, Color.White);
-                    else if(!(no.TotalMilliseconds < 500) && !Keyboard.GetState().IsKeyDown(Keys.V))
+                    else if(!(no.TotalMilliseconds < 250) && !Keyboard.GetState().IsKeyDown(Keys.V))
                         _spriteBatch.Draw(texturas[select1][1], _pruebasPosition, Color.White);
 
                     if (sp2 == 1)
                         _spriteBatch.Draw(texturas[select2][7], _pruebasPosition1, Color.White);
                     else if (sp2 == 2)
                         _spriteBatch.Draw(texturas[select2][5], _pruebasPosition1, Color.White);
-                    else if(!(si.TotalMilliseconds < 500) && !Keyboard.GetState().IsKeyDown(Keys.L))
+                    else if(!(si.TotalMilliseconds < 250) && !Keyboard.GetState().IsKeyDown(Keys.L))
                         _spriteBatch.Draw(texturas[select2][0], _pruebasPosition1, Color.White);
                     
                     if(Keyboard.GetState().IsKeyDown(Keys.C) && !a)
@@ -829,7 +830,7 @@ namespace Juego
                     if (Keyboard.GetState().IsKeyDown(Keys.L)) _spriteBatch.Draw(texturas[select2][11], _pruebasPosition1, Color.White);
                     if (Keyboard.GetState().IsKeyDown(Keys.V)) _spriteBatch.Draw(texturas[select1][12], _pruebasPosition, Color.White);
 
-                    if (no.TotalMilliseconds < 500) _spriteBatch.Draw(texturas[select1][10], _pruebasPosition, Color.White);
+                    if (no.TotalMilliseconds < 250) _spriteBatch.Draw(texturas[select1][10], _pruebasPosition, Color.White);
                     else a = false;
 
 
@@ -838,7 +839,7 @@ namespace Juego
                         tiempo1 = DateTime.Now;
                         a1 = true;
                     }
-                    if (si.TotalMilliseconds < 500) _spriteBatch.Draw(texturas[select2][9], _pruebasPosition1, Color.White);
+                    if (si.TotalMilliseconds < 250) _spriteBatch.Draw(texturas[select2][9], _pruebasPosition1, Color.White);
                     else a1 = false;
                     ax1 = 0;
                     ax2 = 10;
