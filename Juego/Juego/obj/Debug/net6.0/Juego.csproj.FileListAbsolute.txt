@@ -196,3 +196,75 @@ C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\raci
 C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo2 (1).xnb
 C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo3 (1).xnb
 C:\valera\xd\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\ataque\racing-ataque3 (1).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\fondo (3).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\fuente.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\bola (1).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\bola.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\defecto (1).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\defecto.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\fondo (1).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\fondo (2).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\fondo.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\goku (6).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\goku (7).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\mifondo.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n1.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n2.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n3.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n4.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n5.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\n6.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\particula.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\particula1.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\Play.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\ataque\racing-ataque1.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\ataque\racing-ataque2 (1).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\ataque\racing-ataque2.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\ataque\racing-ataque3 (1).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\ataque\racing-ataque3.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\ataque\racing-ataque4.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\caminar\racing-caminar1.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\caminar\racing-caminar2.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\caminar\racing-caminar3.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\herido\racing-herido1.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\herido\racing-herido2.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\herido\racing-herido3.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\herido\racing-herido4.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\racing-base (1).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\racing-base.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo1.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo2 (1).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo2.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo3 (1).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\racing\vuelo\racing-vuelo3.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\s1 (1).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\s1.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\s2 (1).xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\s2.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Content\img\Titulo.xnb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Juego.exe
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Juego.deps.json
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Juego.runtimeconfig.json
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Juego.dll
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\Juego.pdb
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\MonoGame.Framework.dll
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
+C:\P.O.O-hinchada-peleas\Juego\Juego\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
+C:\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.csproj.AssemblyReference.cache
+C:\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.GeneratedMSBuildEditorConfig.editorconfig
+C:\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.AssemblyInfoInputs.cache
+C:\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.AssemblyInfo.cs
+C:\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.csproj.CoreCompileInputs.cache
+C:\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.sourcelink.json
+C:\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.csproj.CopyComplete
+C:\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.dll
+C:\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\refint\Juego.dll
+C:\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.pdb
+C:\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\Juego.genruntimeconfig.cache
+C:\P.O.O-hinchada-peleas\Juego\Juego\obj\Debug\net6.0\ref\Juego.dll
